@@ -12,6 +12,8 @@ import Users from "./pages/Users";
 import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Landing from "./pages/Landing";
+import Profile from "./pages/Profile";
 import { useState } from "react";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,9 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
+            {/* Public routes */}
+            <Route path="/landing" element={<Landing />} />
+            
             {/* Auth routes */}
             <Route path="/login" element={
               isAuthenticated ? <Navigate to="/" /> : <Login />
@@ -41,9 +46,15 @@ const App = () => {
               <Route path="comments" element={<Comments />} />
               <Route path="users" element={<Users />} />
               <Route path="analytics" element={<Analytics />} />
+              <Route path="profile" element={<Profile />} />
               {/* Add routes for other admin pages here */}
               <Route path="*" element={<NotFound />} />
             </Route>
+            
+            {/* Redirect root to landing for non-authenticated users */}
+            <Route path="*" element={
+              isAuthenticated ? <Navigate to="/" /> : <Navigate to="/landing" />
+            } />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

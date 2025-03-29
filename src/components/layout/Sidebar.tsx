@@ -1,133 +1,130 @@
 
-import { Button } from "@/components/ui/button";
+import React from "react";
 import { cn } from "@/lib/utils";
-import { BarChart3, FileText, Home, MapPin, Menu, MessageSquare, Settings, Users } from "lucide-react";
-import { useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useNavigate, useLocation } from "react-router-dom";
+import {
+  Home,
+  AlertTriangle,
+  MessageSquare,
+  Users,
+  BarChart,
+  Settings,
+  LogOut,
+  X,
+  User
+} from "lucide-react";
 
-interface NavItemProps {
-  icon: React.ReactNode;
-  title: string;
-  isActive?: boolean;
-  path: string;
-  expanded: boolean;
-  onClick?: () => void;
-}
-
-const NavItem = ({ icon, title, isActive, path, expanded, onClick }: NavItemProps) => (
-  <Link
-    to={path}
-    className={cn(
-      "flex items-center py-2 px-3 my-1 text-sm font-medium rounded-md transition-colors",
-      isActive
-        ? "bg-fixit-blue text-white hover:bg-fixit-blue/90"
-        : "text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
-    )}
-    onClick={onClick}
-  >
-    <div className="mr-3">{icon}</div>
-    {expanded && <span>{title}</span>}
-  </Link>
-);
-
-interface SidebarProps {
+type SidebarProps = {
   className?: string;
-}
+};
 
 export function Sidebar({ className }: SidebarProps) {
-  const isMobile = useIsMobile();
-  const [expanded, setExpanded] = useState(!isMobile);
-  const [activeItem, setActiveItem] = useState("dashboard");
-
-  const toggleSidebar = () => {
-    setExpanded(!expanded);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // In a real app, this would come from your user authentication
+  const user = {
+    name: "John Doe",
+    email: "john@example.com",
+    avatar: "",
+    role: "Admin"
   };
 
+  const routes = [
+    {
+      name: "Dashboard",
+      icon: Home,
+      path: "/",
+    },
+    {
+      name: "Issue Reports",
+      icon: AlertTriangle,
+      path: "/issue-reports",
+    },
+    {
+      name: "Comments",
+      icon: MessageSquare,
+      path: "/comments",
+    },
+    {
+      name: "Users",
+      icon: Users,
+      path: "/users",
+    },
+    {
+      name: "Analytics",
+      icon: BarChart,
+      path: "/analytics",
+    },
+    {
+      name: "Profile",
+      icon: User,
+      path: "/profile",
+    }
+  ];
+
   return (
-    <div
-      className={cn(
-        "bg-white border-r border-gray-200 dark:bg-gray-900 dark:border-gray-800 transition-all duration-300 flex flex-col",
-        expanded ? "w-60" : "w-16",
-        className
-      )}
-    >
-      <div className="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-        <div className="flex items-center">
-          {expanded && (
-            <span className="text-xl font-bold text-fixit-blue dark:text-white">FixIt</span>
-          )}
-          {!expanded && (
-            <span className="text-xl font-bold text-fixit-blue dark:text-white">FI</span>
-          )}
-        </div>
-        <Button variant="ghost" size="icon" onClick={toggleSidebar}>
-          <Menu className="h-5 w-5" />
+    <div className={cn("flex flex-col w-60 border-r bg-background", className)}>
+      {/* Close button on mobile only */}
+      <div className="lg:hidden p-3 flex justify-end">
+        <Button variant="ghost" size="icon" onClick={() => {}}>
+          <X className="h-5 w-5" />
         </Button>
       </div>
-
-      <div className="px-3 py-5 flex-1 overflow-y-auto">
-        <div className="space-y-1">
-          <NavItem
-            icon={<Home className="h-5 w-5" />}
-            title="Dashboard"
-            path="/"
-            isActive={activeItem === "dashboard"}
-            expanded={expanded}
-            onClick={() => setActiveItem("dashboard")}
-          />
-          <NavItem
-            icon={<MapPin className="h-5 w-5" />}
-            title="Issues Map"
-            path="/issues-map"
-            isActive={activeItem === "issues-map"}
-            expanded={expanded}
-            onClick={() => setActiveItem("issues-map")}
-          />
-          <NavItem
-            icon={<FileText className="h-5 w-5" />}
-            title="Issue Reports"
-            path="/issue-reports"
-            isActive={activeItem === "issue-reports"}
-            expanded={expanded}
-            onClick={() => setActiveItem("issue-reports")}
-          />
-          <NavItem
-            icon={<MessageSquare className="h-5 w-5" />}
-            title="Comments"
-            path="/comments"
-            isActive={activeItem === "comments"}
-            expanded={expanded}
-            onClick={() => setActiveItem("comments")}
-          />
-          <NavItem
-            icon={<Users className="h-5 w-5" />}
-            title="Users"
-            path="/users"
-            isActive={activeItem === "users"}
-            expanded={expanded}
-            onClick={() => setActiveItem("users")}
-          />
-          <NavItem
-            icon={<BarChart3 className="h-5 w-5" />}
-            title="Analytics"
-            path="/analytics"
-            isActive={activeItem === "analytics"}
-            expanded={expanded}
-            onClick={() => setActiveItem("analytics")}
-          />
+      
+      {/* Logo */}
+      <div className="flex items-center h-16 px-5 border-b">
+        <span className="font-bold text-2xl text-fixit-blue">FixIt</span>
+        <span className="ml-2 text-lg text-gray-600">Admin</span>
+      </div>
+      
+      {/* User profile */}
+      <div className="flex items-center p-4 border-b">
+        <Avatar className="h-9 w-9 mr-3">
+          <AvatarImage src={user.avatar} />
+          <AvatarFallback className="bg-blue-100 text-blue-700">
+            {user.name.split(" ").map(n => n[0]).join("")}
+          </AvatarFallback>
+        </Avatar>
+        <div className="flex flex-col truncate">
+          <span className="font-medium text-sm">{user.name}</span>
+          <span className="text-xs text-muted-foreground">{user.role}</span>
         </div>
       </div>
-
-      <div className="p-3 border-t border-gray-200 dark:border-gray-800">
-        <NavItem
-          icon={<Settings className="h-5 w-5" />}
-          title="Settings"
-          path="/settings"
-          isActive={activeItem === "settings"}
-          expanded={expanded}
-          onClick={() => setActiveItem("settings")}
-        />
+      
+      {/* Navigation */}
+      <ScrollArea className="flex-1">
+        <nav className="flex flex-col gap-1 p-2">
+          {routes.map((route) => (
+            <Button
+              key={route.path}
+              variant={location.pathname === route.path ? "secondary" : "ghost"}
+              className={cn(
+                "justify-start",
+                location.pathname === route.path && "bg-blue-50 text-blue-600"
+              )}
+              onClick={() => navigate(route.path)}
+            >
+              <route.icon className="mr-2 h-5 w-5" />
+              {route.name}
+            </Button>
+          ))}
+        </nav>
+      </ScrollArea>
+      
+      {/* Footer */}
+      <div className="p-4 border-t">
+        <Button 
+          variant="ghost" 
+          className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50"
+          onClick={() => navigate("/login")}
+        >
+          <LogOut className="mr-2 h-5 w-5" />
+          Sign Out
+        </Button>
       </div>
     </div>
   );
