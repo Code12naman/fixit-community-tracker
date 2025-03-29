@@ -12,9 +12,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Filter, Search } from "lucide-react";
+import { Filter, Search, Plus } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import { NewIssueForm } from "@/components/issues/NewIssueForm";
 
 const mockIssues = [
   {
@@ -166,9 +167,11 @@ const StatusBadge = ({ status }: { status: string }) => {
 
 export default function Issues() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [issues, setIssues] = useState(mockIssues);
+  const [newIssueDialogOpen, setNewIssueDialogOpen] = useState(false);
   
   // Filter issues based on search query
-  const filteredIssues = mockIssues.filter(issue => 
+  const filteredIssues = issues.filter(issue => 
     issue.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     issue.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
     issue.location.toLowerCase().includes(searchQuery.toLowerCase())
@@ -182,11 +185,18 @@ export default function Issues() {
     });
   };
 
+  // Handle creation of a new issue
+  const handleIssueCreated = (newIssue: any) => {
+    setIssues(prevIssues => [newIssue, ...prevIssues]);
+  };
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Issue Reports</h1>
-        <Button>New Issue</Button>
+        <Button onClick={() => setNewIssueDialogOpen(true)}>
+          <Plus className="mr-2 h-4 w-4" /> New Issue
+        </Button>
       </div>
       
       <Card>
@@ -225,37 +235,51 @@ export default function Issues() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredIssues.map((issue) => (
-                  <TableRow key={issue.id}>
-                    <TableCell className="font-medium">{issue.id}</TableCell>
-                    <TableCell>{issue.title}</TableCell>
-                    <TableCell>{issue.category}</TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-2">
-                        <Avatar className="h-6 w-6">
-                          <AvatarImage src={issue.reporter.avatar} />
-                          <AvatarFallback className="text-xs">{issue.reporter.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
-                        </Avatar>
-                        <span>{issue.reporter.name}</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>{formatDate(issue.date)}</TableCell>
-                    <TableCell>
-                      <StatusBadge status={issue.status} />
-                    </TableCell>
-                    <TableCell>
-                      <PriorityBadge priority={issue.priority} />
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Button variant="ghost" size="sm">View</Button>
+                {filteredIssues.length > 0 ? (
+                  filteredIssues.map((issue) => (
+                    <TableRow key={issue.id}>
+                      <TableCell className="font-medium">{issue.id}</TableCell>
+                      <TableCell>{issue.title}</TableCell>
+                      <TableCell>{issue.category}</TableCell>
+                      <TableCell>
+                        <div className="flex items-center gap-2">
+                          <Avatar className="h-6 w-6">
+                            <AvatarImage src={issue.reporter.avatar} />
+                            <AvatarFallback className="text-xs">{issue.reporter.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
+                          </Avatar>
+                          <span>{issue.reporter.name}</span>
+                        </div>
+                      </TableCell>
+                      <TableCell>{formatDate(issue.date)}</TableCell>
+                      <TableCell>
+                        <StatusBadge status={issue.status} />
+                      </TableCell>
+                      <TableCell>
+                        <PriorityBadge priority={issue.priority} />
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Button variant="ghost" size="sm">View</Button>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={8} className="text-center py-6 text-muted-foreground">
+                      No issues found. Try a different search or create a new issue.
                     </TableCell>
                   </TableRow>
-                ))}
+                )}
               </TableBody>
             </Table>
           </div>
         </CardContent>
       </Card>
+      
+      <NewIssueForm 
+        open={newIssueDialogOpen}
+        onOpenChange={setNewIssueDialogOpen}
+        onIssueCreated={handleIssueCreated}
+      />
     </div>
   );
 }
