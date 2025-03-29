@@ -19,11 +19,11 @@ const mockComments = [
   {
     id: "CMT-1001",
     issueId: "ISSUE-1001",
-    issueTitle: "Damaged Sidewalk Near School",
-    content: "I noticed this yesterday. It's especially dangerous since many children walk there every day.",
+    issueTitle: "Pothole Near Nehru Road, Bangalore",
+    content: "The pothole on Nehru Road has been causing traffic disruptions and vehicle damage.",
     date: "2023-09-15",
     user: {
-      name: "Ryan K.",
+      name: "Aditya K.",
       avatar: "",
     },
     status: "approved"
@@ -31,11 +31,11 @@ const mockComments = [
   {
     id: "CMT-1002",
     issueId: "ISSUE-1003",
-    issueTitle: "Playground Equipment Damaged",
-    content: "My kids go to this playground often. The broken swing could cause injuries.",
+    issueTitle: "Waterlogging in Mumbai's Bandra Area",
+    content: "Monsoon season has caused severe waterlogging, making commute impossible.",
     date: "2023-09-14",
     user: {
-      name: "Laura M.",
+      name: "Priya M.",
       avatar: "",
     },
     status: "approved"
@@ -43,11 +43,11 @@ const mockComments = [
   {
     id: "CMT-1003",
     issueId: "ISSUE-1002",
-    issueTitle: "Illegal Dumping in Creek",
-    content: "I've seen people dumping trash here multiple times. We need a security camera.",
+    issueTitle: "Waste Dumping in Yamuna River, Delhi",
+    content: "Industrial waste is being continuously dumped into the Yamuna River. Environmental hazard.",
     date: "2023-09-13",
     user: {
-      name: "Michael B.",
+      name: "Rahul B.",
       avatar: "",
     },
     status: "pending"
@@ -55,11 +55,11 @@ const mockComments = [
   {
     id: "CMT-1004",
     issueId: "ISSUE-1004",
-    issueTitle: "Street Light Outage",
-    content: "This area is very dark at night without the streetlight. It feels unsafe.",
+    issueTitle: "Street Light Outage in Kolkata's Park Street",
+    content: "Multiple street lights are non-functional, creating safety concerns at night.",
     date: "2023-09-12",
     user: {
-      name: "Jessica L.",
+      name: "Sneha L.",
       avatar: "",
     },
     status: "approved"
@@ -67,11 +67,11 @@ const mockComments = [
   {
     id: "CMT-1005",
     issueId: "ISSUE-1001",
-    issueTitle: "Damaged Sidewalk Near School",
-    content: "I tripped on this sidewalk last week. This needs to be fixed ASAP.",
+    issueTitle: "Road Damage Near IIT Chennai Campus",
+    content: "The road leading to the campus is severely damaged, causing difficulties for students and faculty.",
     date: "2023-09-11",
     user: {
-      name: "Christopher O.",
+      name: "Vivek O.",
       avatar: "",
     },
     status: "approved"
@@ -79,11 +79,11 @@ const mockComments = [
   {
     id: "CMT-1006",
     issueId: "ISSUE-1008",
-    issueTitle: "Traffic Signal Malfunction",
-    content: "The signal is stuck on red. Caused a huge traffic jam this morning.",
+    issueTitle: "Traffic Signal Malfunction in Hyderabad's HITEC City",
+    content: "The traffic signal is causing major congestion during peak hours.",
     date: "2023-09-10",
     user: {
-      name: "Samantha W.",
+      name: "Meera W.",
       avatar: "",
     },
     status: "flagged"
@@ -91,11 +91,11 @@ const mockComments = [
   {
     id: "CMT-1007",
     issueId: "ISSUE-1005",
-    issueTitle: "Pothole on Main Avenue",
-    content: "This pothole damaged my car's suspension. The city should fix this immediately.",
+    issueTitle: "Public Toilet Maintenance in Pune's Koregaon Park",
+    content: "Public toilets are in extremely poor condition and need immediate renovation.",
     date: "2023-09-09",
     user: {
-      name: "Daniel H.",
+      name: "Arjun H.",
       avatar: "",
     },
     status: "approved"
@@ -103,11 +103,11 @@ const mockComments = [
   {
     id: "CMT-1008",
     issueId: "ISSUE-1006",
-    issueTitle: "Graffiti on Community Center",
-    content: "This used to be such a nice building. The graffiti is really bringing down the neighborhood.",
+    issueTitle: "Heritage Building Graffiti in Jaipur's Old City",
+    content: "Historic buildings are being vandalized with graffiti, damaging cultural heritage.",
     date: "2023-09-08",
     user: {
-      name: "Olivia P.",
+      name: "Divya P.",
       avatar: "",
     },
     status: "pending"
