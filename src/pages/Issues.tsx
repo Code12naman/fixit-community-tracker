@@ -20,92 +20,92 @@ import { NewIssueForm } from "@/components/issues/NewIssueForm";
 const mockIssues = [
   {
     id: "ISSUE-1001",
-    title: "Damaged Sidewalk Near School",
+    title: "Damaged Footpath Near School",
     category: "Infrastructure",
-    location: "456 Elm St, Downtown",
+    location: "12th Cross, Indiranagar, Bangalore",
     date: "2023-09-12",
     status: "open",
     priority: "high",
     reporter: {
-      name: "Maria G.",
+      name: "Maya G.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1002",
-    title: "Illegal Dumping in Creek",
+    title: "Waste Dumping in Lake",
     category: "Environment",
-    location: "Willow Creek Park",
+    location: "Ulsoor Lake, Bangalore",
     date: "2023-09-10",
     status: "inProgress",
     priority: "medium",
     reporter: {
-      name: "David L.",
+      name: "Deepak L.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1003",
-    title: "Playground Equipment Damaged",
+    title: "Children's Park Equipment Broken",
     category: "Parks",
-    location: "Central Park Playground",
+    location: "Cubbon Park Play Area",
     date: "2023-09-08",
     status: "inProgress",
     priority: "medium",
     reporter: {
-      name: "Susan K.",
+      name: "Sushma K.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1004",
-    title: "Street Light Outage",
+    title: "Street Light Not Working",
     category: "Infrastructure",
-    location: "10th and Pine St",
+    location: "5th Block, Koramangala",
     date: "2023-09-05",
     status: "open",
     priority: "low",
     reporter: {
-      name: "James T.",
+      name: "Jai T.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1005",
-    title: "Pothole on Main Avenue",
+    title: "Pothole on MG Road",
     category: "Roads",
-    location: "500 Block, Main Avenue",
+    location: "Near Trinity Metro Station",
     date: "2023-09-03",
     status: "resolved",
     priority: "high",
     reporter: {
-      name: "Robert P.",
+      name: "Rajesh P.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1006",
-    title: "Graffiti on Community Center",
+    title: "Graffiti on Metro Pillar",
     category: "Vandalism",
-    location: "West Side Community Center",
+    location: "Majestic Metro Station",
     date: "2023-09-01",
     status: "resolved",
     priority: "low",
     reporter: {
-      name: "Emma S.",
+      name: "Ekta S.",
       avatar: "",
     }
   },
   {
     id: "ISSUE-1007",
-    title: "Water Main Break",
+    title: "Water Pipeline Leakage",
     category: "Utilities",
-    location: "Cherry Street & 5th",
+    location: "HSR Layout Sector 2",
     date: "2023-08-29",
     status: "resolved",
     priority: "high",
     reporter: {
-      name: "Thomas W.",
+      name: "Tarun W.",
       avatar: "",
     }
   },
@@ -113,12 +113,12 @@ const mockIssues = [
     id: "ISSUE-1008",
     title: "Traffic Signal Malfunction",
     category: "Traffic",
-    location: "Broadway & Main Intersection",
+    location: "Silk Board Junction",
     date: "2023-08-25",
     status: "inProgress",
     priority: "high",
     reporter: {
-      name: "Jennifer A.",
+      name: "Jyoti A.",
       avatar: "",
     }
   }
