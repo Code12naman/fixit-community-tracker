@@ -16,11 +16,11 @@ import {
 
 export default function Profile() {
   const [userData, setUserData] = useState({
-    name: "John Doe",
-    email: "john.doe@example.com",
-    phone: "+1 234 567 8901",
-    location: "San Francisco, CA",
-    bio: "Passionate about improving my community. I've been reporting issues in my neighborhood for over 2 years.",
+    name: "Poorva Jain",
+    email: "poorva.jain@example.com",
+    phone: "+91 98765 43210",
+    location: "Bangalore, Karnataka",
+    bio: "Passionate about improving my community. I've been reporting local issues in Bangalore for over 2 years.",
     avatar: "",
     joinDate: "January 2022",
     reportsSubmitted: 27,

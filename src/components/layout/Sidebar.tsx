@@ -27,8 +27,8 @@ export function Sidebar({ className }: SidebarProps) {
   
   // In a real app, this would come from your user authentication
   const user = {
-    name: "John Doe",
-    email: "john@example.com",
+    name: "Poorva Jain",
+    email: "poorva.jain@example.com",
     avatar: "",
     role: "Admin"
   };
