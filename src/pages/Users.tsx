@@ -18,8 +18,8 @@ import { Badge } from "@/components/ui/badge";
 const mockUsers = [
   {
     id: "USR-1001",
-    name: "John Doe",
-    email: "john.doe@example.com",
+    name: "Aditya Sharma",
+    email: "aditya.sharma@example.com",
     role: "user",
     status: "active",
     joined: "2023-06-15",
@@ -28,8 +28,8 @@ const mockUsers = [
   },
   {
     id: "USR-1002",
-    name: "Jane Smith",
-    email: "jane.smith@example.com",
+    name: "Priya Patel",
+    email: "priya.patel@example.com",
     role: "user",
     status: "active",
     joined: "2023-05-22",
@@ -38,8 +38,8 @@ const mockUsers = [
   },
   {
     id: "USR-1003",
-    name: "Robert Johnson",
-    email: "robert.j@example.com",
+    name: "Rajesh Kumar",
+    email: "rajesh.k@example.com",
     role: "admin",
     status: "active",
     joined: "2023-03-10",
@@ -48,8 +48,8 @@ const mockUsers = [
   },
   {
     id: "USR-1004",
-    name: "Emily Davis",
-    email: "emily.davis@example.com",
+    name: "Meera Desai",
+    email: "meera.desai@example.com",
     role: "user",
     status: "inactive",
     joined: "2023-07-05",
@@ -58,8 +58,8 @@ const mockUsers = [
   },
   {
     id: "USR-1005",
-    name: "Michael Wilson",
-    email: "michael.w@example.com",
+    name: "Vikram Singh",
+    email: "vikram.s@example.com",
     role: "user",
     status: "active",
     joined: "2023-02-18",
@@ -68,8 +68,8 @@ const mockUsers = [
   },
   {
     id: "USR-1006",
-    name: "Sarah Thompson",
-    email: "sarah.t@example.com",
+    name: "Sneha Reddy",
+    email: "sneha.r@example.com",
     role: "moderator",
     status: "active",
     joined: "2023-04-30",
@@ -78,8 +78,8 @@ const mockUsers = [
   },
   {
     id: "USR-1007",
-    name: "David Brown",
-    email: "david.b@example.com",
+    name: "Arjun Nair",
+    email: "arjun.n@example.com",
     role: "user",
     status: "suspended",
     joined: "2023-01-25",
@@ -88,8 +88,8 @@ const mockUsers = [
   },
   {
     id: "USR-1008",
-    name: "Jennifer Miller",
-    email: "jennifer.m@example.com",
+    name: "Ananya Mehta",
+    email: "ananya.m@example.com",
     role: "user",
     status: "active",
     joined: "2023-08-12",

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -12,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Filter, Search, Plus } from "lucide-react";
+import { Filter, Search, Plus, Eye } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { NewIssueForm } from "@/components/issues/NewIssueForm";
@@ -170,7 +169,6 @@ export default function Issues() {
   const [issues, setIssues] = useState(mockIssues);
   const [newIssueDialogOpen, setNewIssueDialogOpen] = useState(false);
   
-  // Filter issues based on search query
   const filteredIssues = issues.filter(issue => 
     issue.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     issue.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -185,7 +183,6 @@ export default function Issues() {
     });
   };
 
-  // Handle creation of a new issue
   const handleIssueCreated = (newIssue: any) => {
     setIssues(prevIssues => [newIssue, ...prevIssues]);
   };
@@ -258,7 +255,14 @@ export default function Issues() {
                         <PriorityBadge priority={issue.priority} />
                       </TableCell>
                       <TableCell className="text-right">
-                        <Button variant="ghost" size="sm">View</Button>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          className="hover:bg-primary hover:text-white transition-colors"
+                        >
+                          <Eye className="mr-2 h-4 w-4" />
+                          View Details
+                        </Button>
                       </TableCell>
                     </TableRow>
                   ))
