@@ -43,32 +43,32 @@ export function Stats() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <StatCard
         title="Total Issues"
-        value="1,352"
+        value="2,543"
         icon={<AlertTriangle className="h-4 w-4" />}
-        description="All time reports"
+        description="Pan India Reports"
         className="border-l-4 border-l-fixit-blue"
       />
       <StatCard
         title="Open Issues"
-        value="243"
+        value="426"
         icon={<AlertTriangle className="h-4 w-4" />}
-        trend={{ value: 12, isPositive: false }}
+        trend={{ value: 15, isPositive: false }}
         description="From last month"
         className="border-l-4 border-l-status-open"
       />
       <StatCard
         title="In Progress"
-        value="157"
+        value="284"
         icon={<Clock className="h-4 w-4" />}
-        trend={{ value: 8, isPositive: true }}
+        trend={{ value: 12, isPositive: true }}
         description="From last month"
         className="border-l-4 border-l-status-inProgress"
       />
       <StatCard
         title="Resolved"
-        value="952"
+        value="1,833"
         icon={<CheckCircle className="h-4 w-4" />}
-        trend={{ value: 24, isPositive: true }}
+        trend={{ value: 32, isPositive: true }}
         description="From last month"
         className="border-l-4 border-l-status-resolved"
       />

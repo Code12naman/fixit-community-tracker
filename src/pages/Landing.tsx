@@ -17,11 +17,11 @@ const Landing = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 md:pr-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Make Your City Better with FixIt
+                Transform Your City with FixIt India
               </h1>
               <p className="text-lg md:text-xl mb-8">
-                Report local issues, track their progress, and help improve your community.
-                Join thousands of citizens making a difference.
+                Join the digital transformation of urban governance. Report local issues, track their progress, and help build a better India.
+                Join thousands of citizens making a difference in their communities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -44,7 +44,7 @@ const Landing = () => {
             <div className="md:w-1/2 mt-10 md:mt-0">
               <img 
                 src="/placeholder.svg" 
-                alt="FixIt Application" 
+                alt="FixIt India Application" 
                 className="rounded-lg shadow-xl"
                 width={600} 
                 height={400}
@@ -57,28 +57,28 @@ const Landing = () => {
       {/* Features Section */}
       <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">How FixIt Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How FixIt India Works</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Report Issues",
-                description: "Take a photo, add details, and submit issues directly from your mobile device.",
+                title: "Easy Reporting",
+                description: "Report civic issues instantly with our mobile-friendly platform. Add photos and location details easily.",
                 icon: <MapPin className="h-10 w-10 text-blue-600" />
               },
               {
-                title: "Community Engagement",
-                description: "Upvote important issues and add comments to provide additional information.",
+                title: "Community Voice",
+                description: "Join your local community in highlighting important issues. Your voice matters in shaping your neighborhood.",
                 icon: <Users className="h-10 w-10 text-blue-600" />
               },
               {
-                title: "Track Progress",
-                description: "Follow the status of reported issues from submission to resolution.",
+                title: "Real-time Updates",
+                description: "Track the progress of reported issues from submission to resolution by municipal authorities.",
                 icon: <Activity className="h-10 w-10 text-blue-600" />
               },
               {
-                title: "Get Updates",
-                description: "Receive notifications as issues progress through the resolution process.",
+                title: "Stay Informed",
+                description: "Receive timely notifications about issue status and updates from your municipal corporation.",
                 icon: <MessageSquare className="h-10 w-10 text-blue-600" />
               }
             ].map((feature, index) => (
@@ -104,9 +104,9 @@ const Landing = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to make a difference in your community?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to improve your city?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Join FixIt today and be part of the solution. Help identify issues, track progress, and improve your neighborhood.
+            Join FixIt India today and be part of the digital transformation. Help create cleaner, safer, and better-managed cities across India.
           </p>
           <Button 
             size="lg" 
@@ -123,8 +123,8 @@ const Landing = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-xl font-bold text-white">FixIt</h3>
-              <p>Community-driven issue reporting and tracking</p>
+              <h3 className="text-xl font-bold text-white">FixIt India</h3>
+              <p>Digital platform for civic issue reporting and tracking</p>
             </div>
             <div className="flex gap-6">
               <Button variant="link" className="text-gray-300 hover:text-white">About</Button>
@@ -134,12 +134,12 @@ const Landing = () => {
             </div>
           </div>
           <div className="text-center mt-8">
-            <p>&copy; {new Date().getFullYear()} FixIt. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} FixIt India. All rights reserved.</p>
           </div>
         </div>
       </footer>
     </div>
   );
-};
+}
 
 export default Landing;

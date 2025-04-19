@@ -22,9 +22,9 @@ export default function Dashboard() {
       <Card className="col-span-1 md:col-span-2 lg:col-span-4">
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <div>
-            <CardTitle>Welcome to FixIt Admin Panel</CardTitle>
+            <CardTitle>Welcome to FixIt India Admin Panel</CardTitle>
             <CardDescription className="mt-1">
-              Manage all reported issues, track progress, and engage with citizens
+              Manage citizen reported issues across India, track progress, and improve communities
             </CardDescription>
           </div>
           <Button>View Tutorial</Button>
@@ -37,7 +37,7 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  View and manage all reported issues. Update statuses, assign priorities, and respond to citizens.
+                  View and manage issues reported by citizens across Indian cities. Update statuses and respond to concerns.
                 </p>
                 <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = "/issue-reports"}>
                   Go to Issues
@@ -51,7 +51,7 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Manage user accounts, roles, and permissions. Monitor user activity and engagement.
+                  Manage municipal officials and citizen accounts. Monitor engagement across different regions.
                 </p>
                 <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = "/users"}>
                   Go to Users
@@ -65,7 +65,7 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  View comprehensive analytics on issue patterns, resolution times, and citizen engagement.
+                  View comprehensive analytics on urban issues, resolution times, and citizen participation across India.
                 </p>
                 <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = "/analytics"}>
                   Go to Analytics

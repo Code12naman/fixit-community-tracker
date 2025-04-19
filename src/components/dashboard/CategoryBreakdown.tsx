@@ -1,16 +1,15 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 import { FileText } from "lucide-react";
 
 // Mock data for the category breakdown
 const data = [
-  { name: "Road Issues", value: 35, color: "#3B82F6" },
-  { name: "Lighting", value: 20, color: "#8B5CF6" },
-  { name: "Trash/Sanitation", value: 18, color: "#F59E0B" },
-  { name: "Graffiti", value: 12, color: "#EF4444" },
-  { name: "Parks & Recreation", value: 8, color: "#10B981" },
-  { name: "Others", value: 7, color: "#6B7280" },
+  { name: "Road & Potholes", value: 32, color: "#3B82F6" },
+  { name: "Street Lighting", value: 18, color: "#8B5CF6" },
+  { name: "Garbage Collection", value: 16, color: "#F59E0B" },
+  { name: "Water Supply", value: 14, color: "#EF4444" },
+  { name: "Public Parks", value: 12, color: "#10B981" },
+  { name: "Others", value: 8, color: "#6B7280" },
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
